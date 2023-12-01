@@ -30,31 +30,30 @@ int main()
 	CPU boxOfCPUs[2][2];
 	for (int i = 0; i < 2; i++)
 		for (int j = 0; j < 2; j++)
-			boxOfCPUs[i][j].input_cpu();
+		{
+			try { boxOfCPUs[i][j].input_cpu(); }
+			catch (const invalid_argument& boxOfCPUs)
+			{
+				cout << boxOfCPUs.what() << endl;
+			}
+		}
 	cout << boxOfCPUs[0][1] << endl << endl;
 
 	//6-ая лабораторная
 	//1. Пример работы с базовыми и производными классами, а также с виртуальными методами
 	HDD hdd = HDD();
 	SSD ssd = SSD();
-	DataStorage* storage;
+	DataStor* storage;
 	storage = &hdd;
-	std::cout << storage->getComponentName() << std::endl;
+	std::cout << storage->getCompName() << std::endl;
 	storage = &ssd;
-	std::cout << storage->getComponentName() << std::endl;
-	storage = new SSD(DataTransferInterface::NVME);
-	std::cout << storage->toString() << std::endl;
+	std::cout << storage->getCompName() << std::endl;
+	storage = new SSD(7000, "NVME", "ssd", 2);
+	std::cout << storage->getCompName() << std::endl;
 	delete storage;
 
 	//2. Перегрузка операторов = и <<
-	Display display1 = Display(1920, 1080, 60);
-	Display display2 = display1;
-	std::cout << display1 << std::endl << display2 << std::endl;
-
-	//3. Пример работы с шаблонным классом
-	std::string t = "Client is annoying";
-	Order order = Order(Laptop(), StatusType::FINISHED, t); //например, сообщение о клиенте
-	std::cout << order << std::endl;
-	Order<int> order2 = Order<int>(Laptop(), StatusType::FINISHED, 9999); //например, цена покупки
-	std::cout << order2 << std::endl;
+	CPU cpu = CPU("Ryzen 3 1200", 3100, 4, 4);
+	CPU cpu1 = cpu;
+	cout << cpu << endl << cpu1 << endl;
 }

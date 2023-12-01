@@ -3,6 +3,8 @@
 #include <string>
 #include "PC.h"
 #include "Status.h"
+#include "HDD.h"
+#include "SSD.h"
 
 class Build
 {

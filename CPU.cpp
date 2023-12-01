@@ -36,12 +36,10 @@ inline void clean()  //Очистка потока
 
 bool CPU::CheckCor(string name_cpu, int frequency, int cores, int treads) const
 {
-	if (size(name_cpu) != 0 && frequency > 0 && cores > 0 && treads > 0)
+	if (size(name_cpu) != 0 && frequency > 0 && cores > 0 && treads > 0 && cores >=treads)
 		return true;
-	else {
+	else
 		throw invalid_argument("Некорректный формат данных!");
-		return false;
-	}
 }
 
 void CPU::SetCpu(string name_cpu, int frequency, int cores, int treads)
