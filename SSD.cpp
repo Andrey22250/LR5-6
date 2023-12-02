@@ -1,4 +1,4 @@
-#include "SSD.h"
+п»ї#include "SSD.h"
 
 void SSD::operator=(SSD other) {
 	DataStor::operator=(other);
@@ -29,9 +29,9 @@ void SSD::input() {
 	int speed;
 	string type_ssd;
 
-	cout << "Введите cкорость диска: ";
+	cout << "Р’РІРµРґРёС‚Рµ cРєРѕСЂРѕСЃС‚СЊ РґРёСЃРєР°: ";
 	cin >> speed;
-	cout << "Введите формат диска: ";
+	cout << "Р’РІРµРґРёС‚Рµ С„РѕСЂРјР°С‚ РґРёСЃРєР°: ";
 	cin >> type_ssd;
 
 	SetSSD(speed, type_ssd);
@@ -42,5 +42,5 @@ void SSD::SetSSD(int speed, string type_ssd) {
 		this->speed = speed;
 		this->type_ssd = type_ssd;
 	}
-	else throw std::invalid_argument("Некорректный формат данных!");
+	else throw std::invalid_argument("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С…!");
 }

@@ -1,6 +1,6 @@
-#include "PC.h"
+п»ї#include "PC.h"
 
-inline void clean()  //Очистка потока
+inline void clean()  //РћС‡РёСЃС‚РєР° РїРѕС‚РѕРєР°
 {
 	while (getchar() != '\n');
 }
@@ -62,10 +62,10 @@ Motherboard* PC::GetMrbrd()
 void PC::input_pc()
 {
 	float price;
-	printf("\nВвод информации о компьютере\n");
+	printf("\nР’РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РєРѕРјРїСЊСЋС‚РµСЂРµ\n");
 	do
 	{
-		printf("Введите цену ПК: ");
+		printf("Р’РІРµРґРёС‚Рµ С†РµРЅСѓ РџРљ: ");
 		scanf("%f", &price);
 		clean();
 	} while (price <= 0);
@@ -84,17 +84,17 @@ void PC::Undervolt_GPU()
 		if (this->gpu.GetTDP() <= this->gpu.GetMin_TDP())
 			gpu = GPU(this->gpu.GetName(), this->gpu.GetVram(), this->gpu.GetMin_TDP());
 	}
-	else printf("Undervolt невозможен!");
+	else printf("Undervolt РЅРµРІРѕР·РјРѕР¶РµРЅ!");
 }
 
 void PC::Out_PC()
 {
-	printf("\nИнформация о сборке:\n\n");
-	printf("Процессор: %s, %d МГЦ, %d ядер, %d потоков\n", this->cpu.GetName().c_str(), this->cpu.GetFrequency(), this->cpu.GetCores(), this->cpu.GetTreads());
-	printf("Видеокарта: %s, %d VRAM, %d TDP\n", this->gpu.GetName().c_str(), this->gpu.GetVram(), this->gpu.GetTDP());
-	printf("ОЗУ: %s, %d частота, %d объём\n", this->ram.GetType().c_str(), this->ram.GetFrequencyRam(), this->ram.GetMem());
-	printf("Материнская плата: %s, %s чипсет\n", this->mrbrd->GetName().c_str(), this->mrbrd->GetChipset().c_str());
-	printf("Цена сборки: %.2f\n\n", this->price);
+	printf("\nРРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃР±РѕСЂРєРµ:\n\n");
+	printf("РџСЂРѕС†РµСЃСЃРѕСЂ: %s, %d РњР“Р¦, %d СЏРґРµСЂ, %d РїРѕС‚РѕРєРѕРІ\n", this->cpu.GetName().c_str(), this->cpu.GetFrequency(), this->cpu.GetCores(), this->cpu.GetTreads());
+	printf("Р’РёРґРµРѕРєР°СЂС‚Р°: %s, %d VRAM, %d TDP\n", this->gpu.GetName().c_str(), this->gpu.GetVram(), this->gpu.GetTDP());
+	printf("РћР—РЈ: %s, %d С‡Р°СЃС‚РѕС‚Р°, %d РѕР±СЉС‘Рј\n", this->ram.GetType().c_str(), this->ram.GetFrequencyRam(), this->ram.GetMem());
+	printf("РњР°С‚РµСЂРёРЅСЃРєР°СЏ РїР»Р°С‚Р°: %s, %s С‡РёРїСЃРµС‚\n", this->mrbrd->GetName().c_str(), this->mrbrd->GetChipset().c_str());
+	printf("Р¦РµРЅР° СЃР±РѕСЂРєРё: %.2f\n\n", this->price);
 }
 
 void PC::SetPrice(float price)

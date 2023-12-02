@@ -1,4 +1,4 @@
-#include "DataStor.h"
+п»ї#include "DataStor.h"
 
 void DataStor::operator=(DataStor* other) {
 	this->type = other->type;
@@ -24,9 +24,9 @@ void DataStor::input()
 	string type;
 	int vol;
 
-	printf("\nВвод параметров диска\n");
-	printf("\nВведите тип диска: ");
+	printf("\nР’РІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ РґРёСЃРєР°\n");
+	printf("\nР’РІРµРґРёС‚Рµ С‚РёРї РґРёСЃРєР°: ");
 	getline(cin, type);
-	std::cout << "Введите вместимость (в ГБ): ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РІРјРµСЃС‚РёРјРѕСЃС‚СЊ (РІ Р“Р‘): ";
 	std::cin >> vol;
 }

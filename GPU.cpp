@@ -1,7 +1,7 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "GPU.h"
 
-inline void clean()  //Очистка потока
+inline void clean()  //РћС‡РёСЃС‚РєР° РїРѕС‚РѕРєР°
 {
 	while (getchar() != '\n');
 }
@@ -44,7 +44,7 @@ bool GPU::CheckCor(string name_gpu, int vram, int TDP)
 		return true;
 	else
 	{
-		printf("Неверно, выход из программы...");
+		printf("РќРµРІРµСЂРЅРѕ, РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹...");
 		exit(-1);
 	}
 }
@@ -83,20 +83,20 @@ void GPU::SetGpu(string name_gpu, int vram, int TDP)
 
 void GPU::input_gpu()
 {
-	printf("\nВвод параметров видеокарты\n");
+	printf("\nР’РІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ РІРёРґРµРѕРєР°СЂС‚С‹\n");
 	string name_gpu;
 	int vram, TDP;
-	printf("\nВведите название видеокарты: ");
+	printf("\nР’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РІРёРґРµРѕРєР°СЂС‚С‹: ");
 	getline(cin, name_gpu);
 	do
 	{
-		printf("Введите объём видеопамяти в МБ: ");
+		printf("Р’РІРµРґРёС‚Рµ РѕР±СЉС‘Рј РІРёРґРµРѕРїР°РјСЏС‚Рё РІ РњР‘: ");
 		scanf("%d", &vram);
 		clean();
 	} while (vram <= 0);
 	do
 	{
-		printf("Введите TDP в ваттах: ");
+		printf("Р’РІРµРґРёС‚Рµ TDP РІ РІР°С‚С‚Р°С…: ");
 		scanf("%d", &TDP);
 		clean();
 	} while (TDP <= 0);

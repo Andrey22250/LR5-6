@@ -1,6 +1,6 @@
-#include "Build.h"
+п»ї#include "Build.h"
 
-inline void clean()  //Очистка потока
+inline void clean()  //РћС‡РёСЃС‚РєР° РїРѕС‚РѕРєР°
 {
 	while (getchar() != '\n');
 }
@@ -40,7 +40,7 @@ bool Build::CheckCor(PC pc, string client, Status status)
 		return true;
 	else
 	{
-		printf("Неверно, выход из программы...");
+		printf("РќРµРІРµСЂРЅРѕ, РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹...");
 		exit(-1);
 	}
 }
@@ -68,13 +68,13 @@ Status Build::GetStatus()
 void Build::input_build()
 {
 	string client;
-	printf("Ввод данных заказа\n\n");
-	printf("Введите имя клиента: ");
+	printf("Р’РІРѕРґ РґР°РЅРЅС‹С… Р·Р°РєР°Р·Р°\n\n");
+	printf("Р’РІРµРґРёС‚Рµ РёРјСЏ РєР»РёРµРЅС‚Р°: ");
 	getline(cin, client);
 	Status status;
 	do
 	{
-		printf("Введите статус заказа, где\n0 - Заказ создан\n1 - Заказ в работе\n2 - Заказ выполнен\nВаш выбор: ");
+		printf("Р’РІРµРґРёС‚Рµ СЃС‚Р°С‚СѓСЃ Р·Р°РєР°Р·Р°, РіРґРµ\n0 - Р—Р°РєР°Р· СЃРѕР·РґР°РЅ\n1 - Р—Р°РєР°Р· РІ СЂР°Р±РѕС‚Рµ\n2 - Р—Р°РєР°Р· РІС‹РїРѕР»РЅРµРЅ\nР’Р°С€ РІС‹Р±РѕСЂ: ");
 		scanf("%d", &status);
 		clean();
 	} while (status < 0 && status > 2);
@@ -84,10 +84,10 @@ void Build::input_build()
 
 void Build::out_build()
 {
-	printf("\nИнформация о заказе:\n\n");
-	printf("Номер заказа: %d\n", GetNumBuild());
-	printf("Клиент - %s\n", GetClient().c_str());
-	printf("Статус - %s\n", StatusToString(GetStatus()).c_str());
+	printf("\nРРЅС„РѕСЂРјР°С†РёСЏ Рѕ Р·Р°РєР°Р·Рµ:\n\n");
+	printf("РќРѕРјРµСЂ Р·Р°РєР°Р·Р°: %d\n", GetNumBuild());
+	printf("РљР»РёРµРЅС‚ - %s\n", GetClient().c_str());
+	printf("РЎС‚Р°С‚СѓСЃ - %s\n", StatusToString(GetStatus()).c_str());
 	pc.Out_PC();
 }
 
@@ -95,10 +95,10 @@ void Build::ChangeStatus(Status newstatus)
 {
 	if (newstatus >= create && newstatus <= finished) {
 		this->status = newstatus;
-		printf("Состояние заказа успешно изменено!\n");
+		printf("РЎРѕСЃС‚РѕСЏРЅРёРµ Р·Р°РєР°Р·Р° СѓСЃРїРµС€РЅРѕ РёР·РјРµРЅРµРЅРѕ!\n");
 	}
 	else {
-		printf("Неверно, выход из программы...");
+		printf("РќРµРІРµСЂРЅРѕ, РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹...");
 		exit(-1);
 	}
 }

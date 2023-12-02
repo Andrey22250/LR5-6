@@ -1,4 +1,4 @@
-#include "HDD.h"
+п»ї#include "HDD.h"
 
 void HDD::operator=(HDD other) {
 	DataStor::operator=(other);
@@ -27,7 +27,7 @@ void HDD::input() {
 	DataStor::input();
 	int speed;
 
-	std::cout << "Введите cкорость диска: ";
+	std::cout << "Р’РІРµРґРёС‚Рµ cРєРѕСЂРѕСЃС‚СЊ РґРёСЃРєР°: ";
 	std::cin >> speed;
 	while (getchar() != '\n');
 
@@ -38,5 +38,5 @@ void HDD::SetHDD(int speed) {
 	if (speed > 0) {
 		this->speed = speed;
 	}
-	else throw std::invalid_argument("Некорректный формат данных!");
+	else throw std::invalid_argument("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С…!");
 }

@@ -1,4 +1,4 @@
-#include "Status.h"
+п»ї#include "Status.h"
 
 string StatusToString(Status status)
 {
@@ -7,13 +7,13 @@ string StatusToString(Status status)
 	switch (status)
 	{
 	case create:
-		strStatus = "создан";
+		strStatus = "СЃРѕР·РґР°РЅ";
 		break;
 	case working:
-		strStatus = "в сборке";
+		strStatus = "РІ СЃР±РѕСЂРєРµ";
 		break;
 	case finished:
-		strStatus = "готов к выдаче";
+		strStatus = "РіРѕС‚РѕРІ Рє РІС‹РґР°С‡Рµ";
 		break;
 	default:
 		break;

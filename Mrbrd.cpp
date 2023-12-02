@@ -1,4 +1,4 @@
-#include "Mrbrd.h"
+п»ї#include "Mrbrd.h"
 
 bool Motherboard::CheckCor(string name_mrbrd, string chipset)
 {
@@ -6,7 +6,7 @@ bool Motherboard::CheckCor(string name_mrbrd, string chipset)
 		return true;
 	else
 	{
-		printf("Неверно, выход из программы...");
+		printf("РќРµРІРµСЂРЅРѕ, РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹...");
 		exit(-1);
 	}
 }
@@ -49,10 +49,10 @@ string Motherboard::GetChipset()
 void Motherboard::input_mrbrd()
 {
 	string name_mrbrd, chipset;
-	printf("\nВвод параметров материнской платы\n");
-	printf("\nВведите название материнской платы: ");
+	printf("\nР’РІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ РјР°С‚РµСЂРёРЅСЃРєРѕР№ РїР»Р°С‚С‹\n");
+	printf("\nР’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РјР°С‚РµСЂРёРЅСЃРєРѕР№ РїР»Р°С‚С‹: ");
 	getline(cin, name_mrbrd);
-	printf("Введите чипсет: ");
+	printf("Р’РІРµРґРёС‚Рµ С‡РёРїСЃРµС‚: ");
 	getline(cin, chipset);
 	SetMrbrd(name_mrbrd, chipset);
 }

@@ -1,6 +1,6 @@
-#include "Ram.h"
+п»ї#include "Ram.h"
 
-inline void clean()  //Очистка потока
+inline void clean()  //РћС‡РёСЃС‚РєР° РїРѕС‚РѕРєР°
 {
 	while (getchar() != '\n');
 }
@@ -36,7 +36,7 @@ bool RAM::CheckCor(string type_ddr, int frequency, int mem)
 		return true;
 	else
 	{
-		printf("Неверно, выход из программы...");
+		printf("РќРµРІРµСЂРЅРѕ, РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹...");
 		exit(-1);
 	}
 }
@@ -58,20 +58,20 @@ int RAM::GetMem()
 
 void RAM::input_ram()
 {
-	printf("\nВвод параметров ОЗУ\n");
+	printf("\nР’РІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ РћР—РЈ\n");
 	string type_ddr;
 	int frequency, mem;
-	printf("\nВведите тип ОЗУ: ");
+	printf("\nР’РІРµРґРёС‚Рµ С‚РёРї РћР—РЈ: ");
 	getline(cin, type_ddr);
 	do
 	{
-		printf("Введите частоту ОЗУ в МГЦ: ");
+		printf("Р’РІРµРґРёС‚Рµ С‡Р°СЃС‚РѕС‚Сѓ РћР—РЈ РІ РњР“Р¦: ");
 		scanf("%d", &frequency);
 		clean();
 	} while (frequency <= 0 || frequency >= 12000);
 	do
 	{
-		printf("Введите объём ОЗУ: ");
+		printf("Р’РІРµРґРёС‚Рµ РѕР±СЉС‘Рј РћР—РЈ: ");
 		scanf("%d", &mem);
 		clean();
 	} while (mem <= 0);

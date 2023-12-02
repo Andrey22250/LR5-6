@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <string>
 
@@ -13,7 +13,7 @@ public:
 	~CPU();
 
 	void operator=(CPU other);
-	//единственное "разумное" применение модификтора friend
+	//РµРґРёРЅСЃС‚РІРµРЅРЅРѕРµ "СЂР°Р·СѓРјРЅРѕРµ" РїСЂРёРјРµРЅРµРЅРёРµ РјРѕРґРёС„РёРєС‚РѕСЂР° friend
 	friend CPU& operator++(CPU& cpu);
 	bool CheckCor(string name_cpu, int frequency, int cores, int treads) const;
 

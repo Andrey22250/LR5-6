@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include "CPU.h"
 
@@ -29,7 +29,7 @@ std::ostream& operator << (ostream& out, const CPU& cpu) {
 	return out;
 }
 
-inline void clean()  //Очистка потока
+inline void clean()  //РћС‡РёСЃС‚РєР° РїРѕС‚РѕРєР°
 {
 	while (getchar() != '\n');
 }
@@ -39,7 +39,7 @@ bool CPU::CheckCor(string name_cpu, int frequency, int cores, int treads) const
 	if (size(name_cpu) != 0 && frequency > 0 && cores > 0 && treads > 0 && cores >=treads)
 		return true;
 	else
-		throw invalid_argument("Некорректный формат данных!");
+		throw invalid_argument("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С…!");
 }
 
 void CPU::SetCpu(string name_cpu, int frequency, int cores, int treads)
@@ -52,7 +52,7 @@ void CPU::SetCpu(string name_cpu, int frequency, int cores, int treads)
 		this->treads = treads;
 	}
 }
-//Конструкторы
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 CPU::CPU()
 {
 	frequency = cores = treads = 0;
@@ -74,12 +74,12 @@ CPU::CPU(string name_cpu, int frequency, int cores, int treads)
 		this->treads = treads;
 	}
 }
-//Деструктор
+//Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 CPU::~CPU()
 {
 }
 
-//Получение
+//РџРѕР»СѓС‡РµРЅРёРµ
 int CPU::GetFrequency() const
 {
 	return frequency;
@@ -99,29 +99,29 @@ string CPU::GetName() const
 {
 	return name_cpu;
 }
-//Ввод
+//Р’РІРѕРґ
 void CPU::input_cpu()
 {
 	int frequency, cores, treads;
 	string name_cpu;
-	printf("\nВвод параметров процессора\n");
-	printf("\nВведите название процессора: ");
+	printf("\nР’РІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ РїСЂРѕС†РµСЃСЃРѕСЂР°\n");
+	printf("\nР’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РїСЂРѕС†РµСЃСЃРѕСЂР°: ");
 	getline(cin, name_cpu);
 	do
 	{
-		printf("Введите частоту процессора в МГЦ: ");
+		printf("Р’РІРµРґРёС‚Рµ С‡Р°СЃС‚РѕС‚Сѓ РїСЂРѕС†РµСЃСЃРѕСЂР° РІ РњР“Р¦: ");
 		scanf("%d", &frequency);
 		clean();
 	} while (frequency <= 0 || frequency >= 7000);
 	do
 	{
-		printf("Введите кол-во ядер: ");
+		printf("Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЏРґРµСЂ: ");
 		scanf("%d", &cores);
 		clean();
 	} while (cores <= 0 || cores > 256);
 	do
 	{
-		printf("Введите кол-во потоков: ");
+		printf("Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ РїРѕС‚РѕРєРѕРІ: ");
 		scanf("%d", &treads);
 		clean();
 	} while (treads <= 0 && treads > 512);
