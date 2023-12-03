@@ -54,4 +54,11 @@ int main()
 	CPU cpu = CPU("Ryzen 3 1200", 3100, 4, 4);
 	CPU cpu1 = cpu;
 	cout << cpu << endl << cpu1 << endl;
+	
+	//3. Пример работы с шаблонным классом
+	string t = "Client is annoying";
+	Build build = Build(PC(), "Андрей", working, t); //например, сообщение о клиенте
+	cout << build << endl;
+	Build build2 = Build<int>(PC(), "Андрей", working, 30); //например, время ожидания в часах
+	cout << build2 << endl ;
 }
