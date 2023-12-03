@@ -6,8 +6,6 @@ using namespace std;
 
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
 
 	//5-ая лабораторная
 	//1. Пример работы с исключениями
